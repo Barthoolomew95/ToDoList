@@ -187,4 +187,15 @@ body {
 .task:last-child {
   margin-bottom: 1rem;
 }
+
+.edit-input {
+  background-color: transparent;
+  border: 1px solid #63a4ff;
+  border-radius: 5px;
+  padding: 0px 5px;
+}
+
+.task-done {
+  text-decoration: line-through;
+}
 /*# sourceMappingURL=main.css.map */

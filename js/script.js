@@ -21,7 +21,7 @@ const createBtn = (arrayOfBtnClasses, arrayOfIconClasses, onClickFunction) => {
 	return newBtn
 }
 const makeTaskDone = task => {
-	task.children[0].classList.add('task-done')
+	task.children[0].classList.toggle('task-done')
 }
 const getTaskbuttonsToNormal = task => {
 	task.children[1].onclick = function () {

@@ -31,10 +31,10 @@ const getTaskbuttonsToNormal = task => {
 		deleteTask(task)
 	}
 }
-const applyEditTask = task => {
+const submitEditTask = (task, taskNameAfterEdit) => {
 	let newTaskName = createElement('p', ['task-name'])
 	let taskInput = task.querySelector('.task-name')
-	newTaskName.textContent = taskInput.value
+	newTaskName.textContent = taskNameAfterEdit
 	task.appendChild(newTaskName)
 	task.replaceChild(newTaskName, taskInput)
 	let editBtn = createBtn(['edit', 'task-btn', 'btn'], ['fas', 'fa-pen'], function () {
@@ -44,18 +44,11 @@ const applyEditTask = task => {
 	getTaskbuttonsToNormal(task)
 	isAnotherTaskEdited = false
 }
+const applyEditTask = task => {
+	submitEditTask(task, taskInput.value)
+}
 const cancelEditTask = task => {
-	let newTaskName = createElement('p', ['task-name'])
-	let taskInput = task.querySelector('.task-name')
-	newTaskName.textContent = taskNameBeforeEdit
-	task.appendChild(newTaskName)
-	task.replaceChild(newTaskName, taskInput)
-	let editBtn = createBtn(['edit', 'task-btn', 'btn'], ['fas', 'fa-pen'], function () {
-		editTask(newTask)
-	})
-	task.appendChild(editBtn)
-	getTaskbuttonsToNormal(task)
-	isAnotherTaskEdited = false
+	submitEditTask(task, taskNameBeforeEdit)
 }
 const editTask = task => {
 	if (!isAnotherTaskEdited) {

@@ -2,6 +2,12 @@ const taskInput = document.querySelector('.input')
 const addTaskBtn = document.querySelector('.add-task')
 const taskList = document.querySelector('.tasks-list')
 
+const themeColorMenuBtn = document.querySelector('.theme-color')
+const themeColorMenu = document.querySelector('.theme-color-picker-menu')
+const mainColorPicker = document.querySelector('.main-color')
+const secondaryColorPicker = document.querySelector('.secondary-color')
+let root = document.documentElement
+
 let ID = 0
 let taskNameBeforeEdit
 let isAnotherTaskEdited = false
@@ -106,3 +112,24 @@ const addTask = () => {
 }
 
 addTaskBtn.addEventListener('click', addTask)
+themeColorMenuBtn.addEventListener('click', () => {
+	if (themeColorMenu.classList.contains('hidden')) {
+		themeColorMenu.classList.remove('theme-picker-anim-reverse')
+		setTimeout(() => {
+			themeColorMenu.classList.toggle('hidden')
+		})
+		setTimeout(() => themeColorMenu.classList.toggle('theme-picker-anim'), 0)
+	} else {
+		themeColorMenu.classList.remove('theme-picker-anim')
+		setTimeout(() => themeColorMenu.classList.toggle('theme-picker-anim-reverse'), 0)
+		setTimeout(() => {
+			themeColorMenu.classList.toggle('hidden')
+		}, 400)
+	}
+})
+mainColorPicker.addEventListener('input', e => {
+	root.style.setProperty('--main-color', e.target.value)
+})
+secondaryColorPicker.addEventListener('input', e => {
+	root.style.setProperty('--second-color', e.target.value)
+})

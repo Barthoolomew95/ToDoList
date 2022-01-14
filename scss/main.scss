@@ -1,6 +1,13 @@
 @import './mixins';
-@import './colors';
 @import './animations';
+
+:root {
+	--main-color: #63a4ff;
+	--second-color: #9df183;
+
+	--gradient: linear-gradient(315deg, var(--main-color) 0%, var(--second-color) 74%);
+	--reverse-gradient: linear-gradient(315deg, var(--second-color) 26%, var(--main-color) 74%);
+}
 *,
 ::before,
 ::after {
@@ -19,8 +26,8 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: sans-serif;
-	background-color: $main-color;
-	background-image: $gradient;
+	background-color: var(--main-color);
+	background-image: var(--gradient);
 }
 .btn {
 	background-color: transparent;
@@ -29,17 +36,27 @@ body {
 	cursor: pointer;
 	text-align: center;
 }
-.app {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.app-border {
 	width: 34rem;
 	height: 63rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--reverse-gradient);
+	// box-shadow: 2px 2px 3px var(--second-color);
+}
+.app {
+	display: flex;
+	padding: 1px;
+	flex-direction: column;
+	align-items: center;
+	width: 33.6rem;
+	height: 62.6rem;
 	overflow: hidden;
-	box-shadow: 2px 2px 3px #023780;
-	background-color: $main-color;
-	background-image: $gradient;
-	@include border($main-color);
+
+	background-color: var(--main-color);
+	background-image: var(--gradient);
 
 	.header {
 		position: relative;
@@ -48,7 +65,7 @@ body {
 		height: 12rem;
 		justify-content: center;
 		align-items: center;
-		color: $main-color;
+		color: var(--main-color);
 		@include section-styling();
 		h2 {
 			text-transform: uppercase;
@@ -69,17 +86,17 @@ body {
 		padding: 0.5rem 1rem;
 		width: 70%;
 		background-color: transparent;
-		@include border($main-color);
+		@include border(var(--main-color));
 	}
 	.add-task {
 		text-transform: uppercase;
 		padding: 0.5rem 1rem;
 		margin-left: 0.5rem;
-		border: 1px solid $main-color;
+		border: 1px solid var(--main-color);
 		border-radius: 10px;
 		height: 25px;
 		font-size: 10px;
-		color: $main-color;
+		color: var(--main-color);
 	}
 }
 .theme-color {
@@ -88,7 +105,7 @@ body {
 	right: 1rem;
 	font-size: 2.5rem;
 	padding: 0.2rem;
-	color: $main-color;
+	color: var(--main-color);
 }
 .theme-color-picker-menu {
 	position: absolute;
@@ -99,7 +116,7 @@ body {
 	background-color: rgba(255, 255, 255, 0.7);
 	border-radius: 0.5rem;
 	padding: 1rem;
-	animation: drop-from-top-right 0.5s;
+
 	h3 {
 		font-size: 2.5rem;
 	}
@@ -119,16 +136,16 @@ body {
 		margin: 0.5rem;
 	}
 	.main-color-btn {
-		background-color: $main-color;
+		background-color: var(--main-color);
 	}
 	.secondary-color-btn {
-		background-color: $second-color;
+		background-color: var(--second-color);
 	}
 	.color-picker {
 		opacity: 0;
 	}
 	.main-color {
-		background-color: $main-color;
+		background-color: var(--main-color);
 	}
 }
 .tasks-list {
@@ -138,7 +155,7 @@ body {
 	h3 {
 		margin: 1rem 0;
 		font-size: 1.8rem;
-		color: $main-color;
+		color: var(--main-color);
 	}
 }
 .task {
@@ -178,7 +195,7 @@ body {
 
 .edit-input {
 	background-color: transparent;
-	border: 1px solid $main-color;
+	border: 1px solid var(--main-color);
 	border-radius: 5px;
 	padding: 0px 5px;
 }
@@ -196,6 +213,13 @@ body {
 	animation-duration: 0.4s;
 	animation-direction: reverse;
 	animation-fill-mode: forwards;
+}
+.theme-picker-anim {
+	animation: drop-from-top-right 0.5s;
+}
+.theme-picker-anim-reverse {
+	animation: drop-from-top-right 0.5s;
+	animation-direction: reverse;
 }
 .hidden {
 	visibility: hidden;

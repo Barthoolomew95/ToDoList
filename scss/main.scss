@@ -42,6 +42,7 @@ body {
 	@include border($main-color);
 
 	.header {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		height: 12rem;
@@ -81,7 +82,42 @@ body {
 		color: $main-color;
 	}
 }
-
+.theme-color {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	font-size: 2.5rem;
+	padding: 0.2rem;
+	color: $main-color;
+}
+.theme-color-picker-menu {
+	// visibility: hidden;
+	position: absolute;
+	display: flex;
+	top: 4.3rem;
+	right: 1rem;
+	flex-direction: column;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 0.5rem;
+	.colors-btn {
+		height: 2rem;
+		width: 2rem;
+		border-radius: 50%;
+		margin: 0.5rem;
+	}
+	.main-color-btn {
+		background-color: $main-color;
+	}
+	.secondary-color-btn {
+		background-color: $second-color;
+	}
+	.color-picker {
+		opacity: 0;
+	}
+	.main-color {
+		background-color: $main-color;
+	}
+}
 .tasks-list {
 	width: 80%;
 	text-align: center;

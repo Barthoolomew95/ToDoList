@@ -88,6 +88,7 @@ body {
 }
 
 .app .header {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -150,6 +151,53 @@ body {
   height: 25px;
   font-size: 10px;
   color: #63a4ff;
+}
+
+.theme-color {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  padding: 0.2rem;
+  color: #63a4ff;
+}
+
+.theme-color-picker-menu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 4.3rem;
+  right: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 0.5rem;
+}
+
+.theme-color-picker-menu .colors-btn {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+}
+
+.theme-color-picker-menu .main-color-btn {
+  background-color: #63a4ff;
+}
+
+.theme-color-picker-menu .secondary-color-btn {
+  background-color: #9df183;
+}
+
+.theme-color-picker-menu .color-picker {
+  opacity: 0;
+}
+
+.theme-color-picker-menu .main-color {
+  background-color: #63a4ff;
 }
 
 .tasks-list {

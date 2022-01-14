@@ -24,6 +24,36 @@
   }
 }
 
+@-webkit-keyframes drop-from-top-right {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+  }
+}
+
+@keyframes drop-from-top-right {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+  }
+}
+
 *,
 ::before,
 ::after {
@@ -173,13 +203,40 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.7);
   border-radius: 0.5rem;
+  padding: 1rem;
+  -webkit-animation: drop-from-top-right 0.5s;
+          animation: drop-from-top-right 0.5s;
+}
+
+.theme-color-picker-menu h3 {
+  font-size: 2.5rem;
+}
+
+.theme-color-picker-menu .color-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.theme-color-picker-menu .color-container p {
+  font-size: 1.5rem;
 }
 
 .theme-color-picker-menu .colors-btn {
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
   margin: 0.5rem;
 }
@@ -292,5 +349,9 @@ body {
   animation-direction: reverse;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+.hidden {
+  visibility: hidden;
 }
 /*# sourceMappingURL=main.css.map */

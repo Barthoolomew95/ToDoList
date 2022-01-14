@@ -91,17 +91,30 @@ body {
 	color: $main-color;
 }
 .theme-color-picker-menu {
-	// visibility: hidden;
 	position: absolute;
 	display: flex;
 	top: 4.3rem;
 	right: 1rem;
 	flex-direction: column;
-	background-color: rgba(255, 255, 255, 0.4);
+	background-color: rgba(255, 255, 255, 0.7);
 	border-radius: 0.5rem;
+	padding: 1rem;
+	animation: drop-from-top-right 0.5s;
+	h3 {
+		font-size: 2.5rem;
+	}
+	.color-container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		p {
+			font-size: 1.5rem;
+		}
+	}
 	.colors-btn {
-		height: 2rem;
-		width: 2rem;
+		height: 3rem;
+		width: 3rem;
 		border-radius: 50%;
 		margin: 0.5rem;
 	}
@@ -183,4 +196,7 @@ body {
 	animation-duration: 0.4s;
 	animation-direction: reverse;
 	animation-fill-mode: forwards;
+}
+.hidden {
+	visibility: hidden;
 }

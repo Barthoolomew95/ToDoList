@@ -69,10 +69,16 @@ const editTask = task => {
 	}
 }
 const deleteTask = task => {
-	task.parentElement.removeChild(task)
+	task.classList.remove('show-anim')
+	setTimeout(() => {
+		task.classList.add('show-anim-reverse')
+	}, 0)
+	setTimeout(() => {
+		task.parentElement.removeChild(task)
+	}, 400)
 }
 const createNewTask = () => {
-	let newTask = createElement('div', ['task'])
+	let newTask = createElement('div', ['task', 'show-anim'])
 	newTask.setAttribute('ID', ID)
 	ID++
 	let taskName = createElement('p', ['task-name'])

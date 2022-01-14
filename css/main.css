@@ -1,3 +1,29 @@
+@-webkit-keyframes show-up {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes show-up {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
 *,
 ::before,
 ::after {
@@ -199,5 +225,24 @@ body {
 
 .task-done {
   text-decoration: line-through;
+}
+
+.show-anim {
+  -webkit-animation-name: show-up;
+          animation-name: show-up;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.show-anim-reverse {
+  -webkit-animation-name: show-up;
+          animation-name: show-up;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  animation-direction: reverse;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 /*# sourceMappingURL=main.css.map */

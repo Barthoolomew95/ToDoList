@@ -1,5 +1,6 @@
 @import './mixins';
 @import './colors';
+@import './animations';
 *,
 ::before,
 ::after {
@@ -98,7 +99,6 @@ body {
 	align-items: center;
 	min-height: 2rem;
 	margin: 0.5rem 1rem;
-
 	.task-name {
 		font-size: 2rem;
 		width: 70%;
@@ -137,3 +137,14 @@ body {
 	text-decoration: line-through;
 }
 
+.show-anim {
+	animation-name: show-up;
+	animation-duration: 0.4s;
+	animation-fill-mode: forwards;
+}
+.show-anim-reverse {
+	animation-name: show-up;
+	animation-duration: 0.4s;
+	animation-direction: reverse;
+	animation-fill-mode: forwards;
+}
